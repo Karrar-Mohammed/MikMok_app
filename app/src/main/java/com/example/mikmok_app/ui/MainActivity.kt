@@ -1,4 +1,4 @@
-package com.example.mikmok_app
+package com.example.mikmok_app.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
