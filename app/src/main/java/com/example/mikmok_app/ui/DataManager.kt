@@ -1,6 +1,6 @@
 package com.example.mikmok_app.ui
 
-import com.example.mikmok_app.ui.domain.VideoPlayer
+import com.example.mikmok_app.data.domain.VideoPlayer
 
 object DataManager {
     fun getVideoPlayer(): List<VideoPlayer> = listOf(

@@ -1,4 +1,4 @@
-package com.example.mikmok_app.ui.domain
+package com.example.mikmok_app.data.domain
 
 data class VideoPlayer(
     val videoTitle: String,

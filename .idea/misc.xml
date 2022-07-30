@@ -3,12 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/The Chance/Android/MikMok_app/app/src/main/res/drawable/background_button.xml" value="0.3625" />
-        <entry key="..\:/The Chance/Android/MikMok_app/app/src/main/res/drawable/background_person.xml" value="0.333" />
-        <entry key="..\:/The Chance/Android/MikMok_app/app/src/main/res/drawable/splash_screen_background.xml" value="0.3635" />
-        <entry key="..\:/The Chance/Android/MikMok_app/app/src/main/res/layout/activity_main.xml" value="0.3625" />
-        <entry key="..\:/The Chance/Android/MikMok_app/app/src/main/res/layout/item_video_player.xml" value="0.33" />
         <entry key="..\:/Users/MSI/AndroidStudioProjects/MikMok_app/app/src/main/res/layout/activity_main.xml" value="0.2359375" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.15833333333333333" />
+        <entry key="app/src/main/res/layout/item_video_player.xml" value="0.1" />
       </map>
     </option>
   </component>

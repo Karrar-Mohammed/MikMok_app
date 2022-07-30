@@ -4,9 +4,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.mikmok_app.databinding.ItemVideoPlayerBinding
-import com.example.mikmok_app.ui.domain.VideoPlayer
+import com.example.mikmok_app.data.domain.VideoPlayer
 
 class VideoPlayerAdapter(private val list: List<VideoPlayer>): RecyclerView.Adapter<VideoPlayerAdapter.VideoPlayerViewHolder>() {
 
