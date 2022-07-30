@@ -17,8 +17,8 @@ class VideoPlayerAdapter(private val list: List<VideoPlayer>): RecyclerView.Adap
 
     override fun onBindViewHolder(holder: VideoPlayerViewHolder, position: Int) {
         holder.binding.apply {
-//            txTitle.text = list[position].videoTitle
-//            txDescription.text = list[position].videoDescription
+            textTitle.text = list[position].videoTitle
+            textDescription.text = list[position].videoDescription
 //            Glide.with(holder.itemView).load(list[position].image).into(myVideoPlayer)
         }
     }
