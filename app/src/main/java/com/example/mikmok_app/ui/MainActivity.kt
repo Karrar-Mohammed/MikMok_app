@@ -12,5 +12,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setup()
+    }
+
+    private fun setup(){
+        val adapter = VideoPlayerAdapter(DataManager.getVideoPlayer())
+        binding.recyclerview.adapter = adapter
     }
 }
