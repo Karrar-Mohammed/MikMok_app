@@ -15,8 +15,11 @@
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTranslucentNavigation">true</item>
     </style>
-    <style name="ShapeAppearanceOverlay.App.rounded" parent="">
+    <style name="ShapeAppearanceOverlay.App.rounded.image" parent="">
         <item name="cornerSize">12%</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.App.rounded.button" parent="">
+        <item name="cornerSize">50%</item>
     </style>
 
 </resources>
