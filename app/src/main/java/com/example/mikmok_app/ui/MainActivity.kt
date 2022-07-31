@@ -22,6 +22,9 @@ class MainActivity : AppCompatActivity() {
         val adapter = VideoPlayerAdapter(dataManager.getVideoPlayer())
         binding.recyclerview.adapter = adapter
 
+        PagerSnapHelper().attachToRecyclerView(binding.recyclerview)
+
+
         val okHTTP = Client(dataManager)
         okHTTP.getFilmsList()
     }
