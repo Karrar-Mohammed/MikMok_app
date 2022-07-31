@@ -1,20 +1,17 @@
 package com.example.mikmok_app.data.network
 
 import android.util.Log
+import com.example.mikmok_app.data.DataManager
 import com.example.mikmok_app.data.domain.ClassicItem
-import com.example.mikmok_app.data.domain.Item
 import com.example.mikmok_app.util.Constants
-import com.example.mikmok_app.util.setVideoList
 import com.google.gson.Gson
 import okhttp3.*
 import java.io.IOException
 
-class RequestUsingOkHTTP {
-    private var _responseItemList = mutableListOf<Item>()
-    val items: List<Item> get() = _responseItemList
+class Client(val dataManager: DataManager) {
+    private val client = OkHttpClient()
 
-    fun makeRequestUsingOkHTTP() {
-        val client = OkHttpClient()
+    fun getFilmsList() {
         val request = Request.Builder().url(Constants.URL).build()
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
@@ -25,8 +22,9 @@ class RequestUsingOkHTTP {
                 response.body?.string().let { jsonString ->
                     val result = Gson().fromJson(jsonString, ClassicItem::class.java)
                     result.feed.forEach { item ->
-                        _responseItemList = setVideoList(item)
-                        Log.d("TAG", "onResponse: $items")
+                        item.items.forEach {
+                            dataManager.addFilm(it)
+                        }
                     }
                 }
             }

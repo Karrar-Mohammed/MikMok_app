@@ -1,6 +1,6 @@
 package com.example.mikmok_app.data.domain
 
-data class Item(
+data class Film(
     val id: String,
     val year: Int,
     val duration: Int,

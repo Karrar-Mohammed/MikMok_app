@@ -5,5 +5,5 @@ data class Feed(
     val title: String,
     val description: String,
     val image: String,
-    val items: List<Item>
+    val items: List<Film>
 )
