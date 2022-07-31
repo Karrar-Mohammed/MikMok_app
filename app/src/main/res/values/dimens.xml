@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="zero">0dp</dimen>
+
+    <dimen name="spacing_small">4dp</dimen>
+    <dimen name="spacing_medium">16dp</dimen>
+    <dimen name="spacing_Extra">16dp</dimen>
+    <dimen name="spacing_extra_large">32dp</dimen>
+
+    <dimen name="font_size_primary">16sp</dimen>
+    <dimen name="font_size_secondary">18sp</dimen>
+    <dimen name="font_size_caption">12sp</dimen>
+
+    <dimen name="size_image_user">50dp</dimen>
+    <dimen name="circle_size_button">42dp</dimen>
+
+</resources>
