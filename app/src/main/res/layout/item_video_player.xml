@@ -117,8 +117,7 @@
         app:iconTint="@color/grey"
         app:layout_constraintBottom_toTopOf="@+id/materialButton2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.rounded.button"
-        tools:ignore="MissingConstraints" />
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.rounded.button" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/materialButton"
@@ -137,8 +136,7 @@
         app:iconTint="@color/grey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.rounded.button"
-        tools:ignore="MissingConstraints" />
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.rounded.button" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/materialButton2"
@@ -157,8 +155,7 @@
         app:iconTint="@color/grey"
         app:layout_constraintBottom_toTopOf="@+id/materialButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.rounded.button"
-        tools:ignore="MissingConstraints" />
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.rounded.button" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
