@@ -1,4 +1,4 @@
-package com.example.mikmok_app.data
+package com.example.mikmok_app.data.domain
 
 data class Item(
     val id: String,

@@ -1,10 +1,10 @@
 package com.example.mikmok_app.data.network
 
 import android.util.Log
-import com.example.mikmok_app.data.ClassicItem
-import com.example.mikmok_app.data.Item
+import com.example.mikmok_app.data.domain.ClassicItem
+import com.example.mikmok_app.data.domain.Item
 import com.example.mikmok_app.util.Constants
-import com.example.mikmok_app.util.DataManager
+import com.example.mikmok_app.util.setVideoList
 import com.google.gson.Gson
 import okhttp3.*
 import java.io.IOException
@@ -25,7 +25,7 @@ class RequestUsingOkHTTP {
                 response.body?.string().let { jsonString ->
                     val result = Gson().fromJson(jsonString, ClassicItem::class.java)
                     result.feed.forEach { item ->
-                        _responseItemList = DataManager().setVideoList(item)
+                        _responseItemList = setVideoList(item)
                         Log.d("TAG", "onResponse: $items")
                     }
                 }

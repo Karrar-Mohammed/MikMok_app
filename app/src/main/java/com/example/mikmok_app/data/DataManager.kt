@@ -1,4 +1,4 @@
-package com.example.mikmok_app.ui
+package com.example.mikmok_app.data
 
 import com.example.mikmok_app.data.domain.VideoPlayer
 
