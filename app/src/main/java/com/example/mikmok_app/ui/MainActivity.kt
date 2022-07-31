@@ -6,6 +6,8 @@ import android.os.Bundle
 import androidx.recyclerview.widget.PagerSnapHelper
 import com.example.mikmok_app.data.DataManager
 import com.example.mikmok_app.data.network.Client
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.example.mikmok_app.R
 import com.example.mikmok_app.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -15,6 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setup()
