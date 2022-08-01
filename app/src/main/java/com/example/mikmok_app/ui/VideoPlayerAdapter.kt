@@ -15,6 +15,7 @@ import com.google.android.exoplayer2.ui.PlayerView
 class VideoPlayerAdapter(private val list: List<VideoPlayer>) : RecyclerView.Adapter<VideoPlayerAdapter.VideoPlayerViewHolder>() {
 
     private lateinit var exoPlayer: ExoPlayer
+    var buttonLike: Int = 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VideoPlayerViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -29,10 +30,21 @@ class VideoPlayerAdapter(private val list: List<VideoPlayer>) : RecyclerView.Ada
         holder.binding.apply {
             textTitle.text = list[position].videoTitle
             textDescription.text = list[position].videoDescription
-            setExoPlayer(holder,videoPlayerss,root.context,position)
+
+            setExoPlayer(holder,videoPlayers,root.context,position)
+        }
+        holder.binding.likeVideo.setOnClickListener{
+        if (buttonLike == 0){
+            buttonLike = 1
+            holder.binding.likeVideo.setIconTintResource(R.color.red)
+        }else{
+            buttonLike = 0
+            holder.binding.likeVideo.setIconTintResource(R.color.white)
         }
 
+        }
     }
+
 
     private fun setExoPlayer(
         holder: VideoPlayerViewHolder,
