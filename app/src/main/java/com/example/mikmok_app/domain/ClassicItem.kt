@@ -1,4 +1,4 @@
-package com.example.mikmok_app.data.domain
+package com.example.mikmok_app.domain
 
 data class ClassicItem(
     val feed: List<Feed>,

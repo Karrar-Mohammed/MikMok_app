@@ -1,19 +1,16 @@
 package com.example.mikmok_app.ui
 
-import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.PagerSnapHelper
-import com.example.mikmok_app.data.DataManager
-import com.example.mikmok_app.data.network.Client
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import com.example.mikmok_app.R
+import androidx.recyclerview.widget.PagerSnapHelper
+import com.example.mikmok_app.data.network.Client
 import com.example.mikmok_app.databinding.ActivityMainBinding
+import com.example.mikmok_app.domain.models.Film
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private val dataManager = DataManager()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,11 +21,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setup() {
-        val adapter = VideoPlayerAdapter(dataManager.getVideoPlayer())
-        binding.recyclerview.adapter = adapter
         PagerSnapHelper().attachToRecyclerView(binding.recyclerview)
 
-        val okHTTP = Client(dataManager)
-        okHTTP.getFilmsList()
+        val okHTTP = Client()
+        okHTTP.getFilmsList(callback = object : Client.ApiCallback{
+            override fun onFilmsReady(list: List<Film>) {
+                // implement your recyclerView
+                val adapter = VideoPlayerAdapter(list)
+                binding.recyclerview.adapter = adapter
+            }
+
+        })
     }
 }

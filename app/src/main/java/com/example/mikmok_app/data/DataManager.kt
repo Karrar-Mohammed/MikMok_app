@@ -1,15 +1,15 @@
 package com.example.mikmok_app.data
 
-import com.example.mikmok_app.data.domain.Film
-import com.example.mikmok_app.data.domain.VideoPlayer
+import com.example.mikmok_app.data.apiModels.FilmDto
+import com.example.mikmok_app.domain.VideoPlayer
 
 class DataManager {
 
-    private val _filmsList = mutableListOf<Film>()
-    val filmsList : List<Film>
+    private val _filmsList = mutableListOf<FilmDto>()
+    val filmsList : List<FilmDto>
         get() = _filmsList
 
-    fun addFilm(film: Film) {
+    fun addFilm(film: FilmDto) {
         _filmsList.add(film)
     }
 

@@ -1,6 +1,6 @@
-package com.example.mikmok_app.data.domain
+package com.example.mikmok_app.data.apiModels
 
-data class Film(
+data class FilmDto(
     val id: String,
     val year: Int,
     val duration: Int,
