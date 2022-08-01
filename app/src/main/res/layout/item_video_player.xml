@@ -7,7 +7,7 @@
     android:background="@color/black">
 
     <com.google.android.exoplayer2.ui.StyledPlayerView
-        android:id="@+id/video_players"
+        android:id="@+id/video_player"
         android:layout_width="match_parent"
         android:layout_height="@dimen/zero"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -15,20 +15,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-<!--    <ProgressBar-->
-<!--        android:id="@+id/loading_video"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:indeterminate="true"-->
-<!--        android:indeterminateDrawable="@drawable/progress"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-
-
     <TextView
-        android:id="@+id/text_name_person"
+        android:id="@+id/text_title"
         android:text="@string/ali_mohamed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -37,8 +25,8 @@
         android:textColor="#ffffff"
         android:textSize="@dimen/font_size_secondary"
         app:fontStyle="normal"
-        app:layout_constraintStart_toEndOf="@+id/image_person"
-        app:layout_constraintTop_toTopOf="@+id/image_person" />
+        app:layout_constraintStart_toEndOf="@+id/image_film"
+        app:layout_constraintTop_toTopOf="@+id/image_film" />
 
     <TextView
         android:id="@+id/text_date"
@@ -47,52 +35,39 @@
         android:layout_height="wrap_content"
         android:textColor="@color/grey"
         android:textSize="@dimen/font_size_caption"
-        app:layout_constraintBottom_toBottomOf="@+id/image_person"
-        app:layout_constraintStart_toStartOf="@+id/text_name_person"
-        app:layout_constraintTop_toBottomOf="@+id/text_name_person"
+        app:layout_constraintBottom_toBottomOf="@+id/image_film"
+        app:layout_constraintStart_toStartOf="@+id/text_title"
+        app:layout_constraintTop_toBottomOf="@+id/text_title"
         tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/text_title"
-        android:text="@string/life_is_hard_but_beautiful"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/spacing_medium"
-        android:lines="1"
-        android:textColor="@color/white"
-        android:textSize="@dimen/font_size_primary"
-        app:layout_constraintBottom_toTopOf="@+id/text_description"
-        app:layout_constraintStart_toStartOf="@+id/image_person"
-        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/text_description"
-        android:text="@string/text_description_is"
         android:layout_width="@dimen/zero"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:layout_marginBottom="@dimen/spacing_extra_large"
+        android:layout_marginTop="@dimen/spacing_medium"
         android:layout_marginEnd="@dimen/spacing_medium"
         android:lines="2"
+
+        android:text="@string/text_description_is"
         android:textColor="@color/grey"
         android:textSize="@dimen/font_size_caption"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/share_video"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/image_person"
+        app:layout_constraintStart_toStartOf="@+id/image_film"
+        app:layout_constraintTop_toBottomOf="@+id/image_film"
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/image_person"
+        android:id="@+id/image_film"
         android:layout_width="@dimen/size_image_user"
         android:layout_height="@dimen/size_image_user"
         android:layout_marginStart="@dimen/spacing_medium"
         android:background="@drawable/background_person"
         android:scaleType="centerCrop"
         android:src="@drawable/image_person"
-        app:layout_constraintBottom_toTopOf="@+id/text_title"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/like_video"
+        app:layout_constraintTop_toTopOf="@+id/comment_video"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.rounded.image" />
 
     <com.google.android.material.button.MaterialButton
@@ -116,6 +91,7 @@
         android:id="@+id/share_video"
         android:layout_width="@dimen/circle_size_button"
         android:layout_height="@dimen/circle_size_button"
+        android:layout_marginBottom="@dimen/spacing_extra_large"
         android:insetTop="@dimen/zero"
         android:insetBottom="@dimen/zero"
         app:backgroundTint="@color/white_200"
@@ -123,7 +99,7 @@
         app:iconGravity="textTop"
         app:iconPadding="@dimen/zero"
         app:iconTint="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/text_description"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/comment_video"
         app:layout_constraintStart_toStartOf="@+id/comment_video"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.rounded.button"

@@ -9,7 +9,7 @@
 
     <dimen name="font_size_primary">16sp</dimen>
     <dimen name="font_size_secondary">18sp</dimen>
-    <dimen name="font_size_caption">12sp</dimen>
+    <dimen name="font_size_caption">14sp</dimen>
 
     <dimen name="size_image_user">50dp</dimen>
     <dimen name="circle_size_button">42dp</dimen>
