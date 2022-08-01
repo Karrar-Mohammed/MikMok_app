@@ -6,4 +6,6 @@
     <string name="text_description_is">Life is hard but beautiful Life is hard but beautiful sadasd dsadsad jkjkjn lkjlkjn lkjlkjlkj jlkjlkj sadas sdaasd</string>
     <string name="shadow_end">shadowEnd</string>
     <string name="background">background</string>
+
+    <string name="error_show_video">Can\'t play this video</string>
 </resources>
