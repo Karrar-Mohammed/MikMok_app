@@ -9,13 +9,12 @@ import com.example.mikmok_app.R
 import com.example.mikmok_app.databinding.ItemVideoPlayerBinding
 import com.example.mikmok_app.ui.domain.VideoPlayer
 import com.google.android.exoplayer2.*
-import com.google.android.exoplayer2.ui.PlayerView
+import com.google.android.exoplayer2.ui.StyledPlayerView
 
 
 class VideoPlayerAdapter(private val list: List<VideoPlayer>) : RecyclerView.Adapter<VideoPlayerAdapter.VideoPlayerViewHolder>() {
 
     private lateinit var exoPlayer: ExoPlayer
-    var buttonLike: Int = 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VideoPlayerViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -27,40 +26,28 @@ class VideoPlayerAdapter(private val list: List<VideoPlayer>) : RecyclerView.Ada
         holder: VideoPlayerViewHolder,
         position: Int,
     ) {
+        val currentItem = list[position]
         holder.binding.apply {
-            textTitle.text = list[position].videoTitle
-            textDescription.text = list[position].videoDescription
+            textTitle.text = currentItem.videoTitle
+            textDescription.text = currentItem.videoDescription
 
-            setExoPlayer(holder,videoPlayers,root.context,position)
-        }
-        holder.binding.likeVideo.setOnClickListener{
-        if (buttonLike == 0){
-            buttonLike = 1
-            holder.binding.likeVideo.setIconTintResource(R.color.red)
-        }else{
-            buttonLike = 0
-            holder.binding.likeVideo.setIconTintResource(R.color.white)
-        }
-
+            setExoPlayer(videoPlayers,root.context,currentItem.video)
         }
     }
 
 
     private fun setExoPlayer(
-        holder: VideoPlayerViewHolder,
-        videoPlayers: PlayerView,
+        videoPlayers: StyledPlayerView,
         context: Context,
-        position: Int
+        videoUrl: String
     ) {
-        exoPlayer = ExoPlayerVideo(holder).initialization()
+        exoPlayer = ExoPlayer.Builder(context).build()
         videoPlayers.player = exoPlayer
         videoPlayers.useController = false
-        exoPlayer.seekTo(0)
-        val mediaSource = ExoPlayerVideo.mediaSource(context, list[position].video)
-        exoPlayer.setMediaSource(mediaSource)
+        val mediaItem = MediaItem.fromUri(videoUrl)
+        exoPlayer.addMediaItem(mediaItem)
         exoPlayer.prepare()
         exoPlayer.playWhenReady = true
-        exoPlayer.play()
     }
 
     override fun getItemCount(): Int = list.size

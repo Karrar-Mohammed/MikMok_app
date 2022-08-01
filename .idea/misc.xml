@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Time TraveleR/AndroidStudioProjects/MikMok_app/app/src/main/res/layout/activity_main.xml" value="0.36102564102564105" />
+        <entry key="..\:/Users/Time TraveleR/AndroidStudioProjects/MikMok_app/app/src/main/res/layout/item_video_player.xml" value="0.36102564102564105" />
         <entry key="app/src/main/res/drawable/progress.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1921875" />
         <entry key="app/src/main/res/layout/item_video_player.xml" value="0.33" />
