@@ -11,7 +11,7 @@ import java.io.IOException
 class Client(val dataManager: DataManager) {
     private val client = OkHttpClient()
 
-    fun getFilmsList() {
+    fun getFilmsList(setupRecycler: () -> Unit) {
         val request = Request.Builder().url(Constants.URL).build()
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
@@ -27,6 +27,7 @@ class Client(val dataManager: DataManager) {
                         }
                     }
                 }
+                setupRecycler()
             }
         }
         )

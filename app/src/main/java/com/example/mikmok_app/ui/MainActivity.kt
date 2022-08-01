@@ -1,14 +1,13 @@
 package com.example.mikmok_app.ui
 
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.PagerSnapHelper
 import com.example.mikmok_app.data.DataManager
 import com.example.mikmok_app.data.network.Client
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import com.example.mikmok_app.R
 import com.example.mikmok_app.databinding.ActivityMainBinding
+import com.google.android.exoplayer2.ui.StyledPlayerView
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,11 +23,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setup() {
-        val adapter = VideoPlayerAdapter(dataManager.getVideoPlayer())
-        binding.recyclerview.adapter = adapter
-        PagerSnapHelper().attachToRecyclerView(binding.recyclerview)
 
         val okHTTP = Client(dataManager)
-        okHTTP.getFilmsList()
+        okHTTP.getFilmsList{
+            runOnUiThread {
+                val adapter = VideoPlayerAdapter(dataManager.filmsList)
+                binding.recyclerview.adapter = adapter
+                PagerSnapHelper().attachToRecyclerView(binding.recyclerview)
+
+            }
+        }
+
     }
 }
