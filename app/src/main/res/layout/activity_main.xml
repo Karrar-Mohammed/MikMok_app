@@ -6,15 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
-<!--    <com.google.android.exoplayer2.ui.PlayerView-->
-<!--        android:id="@+id/video_playerss"-->
-<!--        android:layout_width="@dimen/zero"-->
-<!--        android:layout_height="@dimen/zero"-->
-<!--        app:layout_constraintDimensionRatio="16:9"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
