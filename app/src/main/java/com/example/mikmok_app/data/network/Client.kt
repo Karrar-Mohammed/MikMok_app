@@ -12,11 +12,7 @@ import java.io.IOException
 class Client {
     private val client = OkHttpClient()
 
-    interface ApiCallback {
-        fun onFilmsReady(list: List<Film>)
-    }
-
-    fun getFilmsList(callback: ApiCallback?) {
+    fun getFilmsList(onListReady: (List<Film>) -> Unit) {
 
         val request = Request.Builder().url(Constants.URL).build()
         client
@@ -25,7 +21,7 @@ class Client {
                 object : Callback {
                     override fun onFailure(call: Call, e: IOException) {
                         Handler(Looper.getMainLooper()).post {
-                            callback?.onFilmsReady(emptyList())
+                            onListReady(emptyList())
                         }
                     }
 
@@ -51,7 +47,7 @@ class Client {
                                 }
                             }
                             Handler(Looper.getMainLooper()).post {
-                                callback?.onFilmsReady(list)
+                                onListReady(list)
                             }
 
                         }

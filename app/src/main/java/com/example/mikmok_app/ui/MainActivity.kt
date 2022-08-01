@@ -24,13 +24,13 @@ class MainActivity : AppCompatActivity() {
         PagerSnapHelper().attachToRecyclerView(binding.recyclerview)
 
         val okHTTP = Client()
-        okHTTP.getFilmsList(callback = object : Client.ApiCallback{
-            override fun onFilmsReady(list: List<Film>) {
-                // implement your recyclerView
-                val adapter = VideoPlayerAdapter(list)
-                binding.recyclerview.adapter = adapter
-            }
+        okHTTP.getFilmsList{list ->
+            setupRecyclerView(list)
+        }
+    }
 
-        })
+    private fun setupRecyclerView(list: List<Film>){
+        val adapter = VideoPlayerAdapter(list)
+        binding.recyclerview.adapter = adapter
     }
 }
