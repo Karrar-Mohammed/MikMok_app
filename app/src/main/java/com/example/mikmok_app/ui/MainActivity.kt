@@ -7,7 +7,6 @@ import com.example.mikmok_app.data.DataManager
 import com.example.mikmok_app.data.network.Client
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.mikmok_app.databinding.ActivityMainBinding
-import com.google.android.exoplayer2.ui.StyledPlayerView
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,7 +22,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setup() {
-
         val okHTTP = Client(dataManager)
         okHTTP.getFilmsList{
             runOnUiThread {

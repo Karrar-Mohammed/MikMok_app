@@ -1,5 +1,6 @@
 package com.example.mikmok_app.ui
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +10,6 @@ import com.example.mikmok_app.R
 import com.example.mikmok_app.data.domain.Film
 import com.example.mikmok_app.databinding.ItemVideoPlayerBinding
 import com.example.mikmok_app.util.playVideoFromUrl
-
 
 
 class VideoPlayerAdapter(private val list: List<Film>) : RecyclerView.Adapter<VideoPlayerAdapter.VideoPlayerViewHolder>() {
@@ -31,7 +31,19 @@ class VideoPlayerAdapter(private val list: List<Film>) : RecyclerView.Adapter<Vi
             textDescription.text = currentItem.description
             textDate.text = currentItem.year.toString()
             Glide.with(root.context).load(currentItem.art).into(imageFilm)
-            videoPlayer.playVideoFromUrl(currentItem.url, root.context)
+
+            videoPlayer.addOnAttachStateChangeListener(object : View.OnAttachStateChangeListener {
+                override fun onViewAttachedToWindow(player: View?) {
+                    videoPlayer.playVideoFromUrl(currentItem.url)
+                    Log.v("adapter", "attached: ${currentItem.title}")
+                }
+
+                override fun onViewDetachedFromWindow(player: View?) {
+                    videoPlayer.player?.stop()
+                    Log.v("adapter", "unattached: ${currentItem.title}")
+                }
+
+            })
 
         }
     }
