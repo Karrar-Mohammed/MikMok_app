@@ -1,11 +1,11 @@
 package com.example.mikmok_app.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.recyclerview.widget.PagerSnapHelper
 import com.example.mikmok_app.data.DataManager
 import com.example.mikmok_app.data.network.Client
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.mikmok_app.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -25,8 +25,8 @@ class MainActivity : AppCompatActivity() {
         val okHTTP = Client(dataManager)
         okHTTP.getFilmsList{
             runOnUiThread {
-                val adapter = VideoPlayerAdapter(dataManager.filmsList)
-                binding.recyclerview.adapter = adapter
+                val mAdapter = VideoPlayerAdapter(dataManager.filmsList)
+                binding.recyclerview.adapter = mAdapter
                 PagerSnapHelper().attachToRecyclerView(binding.recyclerview)
 
             }

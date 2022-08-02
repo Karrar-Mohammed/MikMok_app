@@ -11,6 +11,9 @@ import com.example.mikmok_app.data.domain.Film
 import com.example.mikmok_app.databinding.ItemVideoPlayerBinding
 import com.example.mikmok_app.util.playVideoFromUrl
 
+import com.google.android.exoplayer2.ExoPlayer.Builder
+import com.google.android.exoplayer2.MediaItem
+
 
 class VideoPlayerAdapter(private val list: List<Film>) : RecyclerView.Adapter<VideoPlayerAdapter.VideoPlayerViewHolder>() {
 
@@ -32,20 +35,37 @@ class VideoPlayerAdapter(private val list: List<Film>) : RecyclerView.Adapter<Vi
             textDate.text = currentItem.year.toString()
             Glide.with(root.context).load(currentItem.art).into(imageFilm)
 
-            videoPlayer.addOnAttachStateChangeListener(object : View.OnAttachStateChangeListener {
-                override fun onViewAttachedToWindow(player: View?) {
-                    videoPlayer.playVideoFromUrl(currentItem.url)
-                    Log.v("adapter", "attached: ${currentItem.title}")
-                }
+            val exoPlayer = Builder(root.context).build()
+            holder.binding.videoPlayer.player = exoPlayer
+            exoPlayer.addMediaItem(MediaItem.fromUri(currentItem.url))
+            exoPlayer.prepare()
 
-                override fun onViewDetachedFromWindow(player: View?) {
-                    videoPlayer.player?.stop()
-                    Log.v("adapter", "unattached: ${currentItem.title}")
-                }
 
-            })
+//            videoPlayer.addOnAttachStateChangeListener(object : View.OnAttachStateChangeListener {
+//                override fun onViewAttachedToWindow(player: View?) {
+//                    videoPlayer.playVideoFromUrl(currentItem.url)
+//                    Log.v("adapter", "attached: ${currentItem.title}")
+//                }
+//
+//                override fun onViewDetachedFromWindow(player: View?) {
+//                    videoPlayer.player?.stop()
+//                    Log.v("adapter", "unattached: ${currentItem.title}")
+//                }
+//            })
 
         }
+    }
+
+    override fun onViewAttachedToWindow(holder: VideoPlayerViewHolder) {
+        super.onViewAttachedToWindow(holder)
+        holder.binding.videoPlayer.player?.play()
+        Log.v("adapter", "attached: w")
+    }
+
+    override fun onViewDetachedFromWindow(holder: VideoPlayerViewHolder) {
+        super.onViewDetachedFromWindow(holder)
+        holder.binding.videoPlayer.player?.pause()
+        Log.v("adapter", "unattached: x")
     }
 
     override fun getItemCount(): Int = list.size
