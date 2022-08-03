@@ -9,9 +9,7 @@ import com.bumptech.glide.Glide
 import com.example.mikmok_app.R
 import com.example.mikmok_app.data.domain.Film
 import com.example.mikmok_app.databinding.ItemVideoPlayerBinding
-import com.example.mikmok_app.util.playVideoFromUrl
-
-import com.google.android.exoplayer2.ExoPlayer.Builder
+import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
 
 
@@ -34,37 +32,29 @@ class VideoPlayerAdapter(private val list: List<Film>) : RecyclerView.Adapter<Vi
             textDescription.text = currentItem.description
             textDate.text = currentItem.year.toString()
             Glide.with(root.context).load(currentItem.art).into(imageFilm)
-
-            val exoPlayer = Builder(root.context).build()
-            holder.binding.videoPlayer.player = exoPlayer
+            val exoPlayer = ExoPlayer.Builder(root.context).build()
+            videoPlayer.player = exoPlayer
+            videoPlayer.useController = false
             exoPlayer.addMediaItem(MediaItem.fromUri(currentItem.url))
             exoPlayer.prepare()
-
-
-//            videoPlayer.addOnAttachStateChangeListener(object : View.OnAttachStateChangeListener {
-//                override fun onViewAttachedToWindow(player: View?) {
-//                    videoPlayer.playVideoFromUrl(currentItem.url)
-//                    Log.v("adapter", "attached: ${currentItem.title}")
-//                }
-//
-//                override fun onViewDetachedFromWindow(player: View?) {
-//                    videoPlayer.player?.stop()
-//                    Log.v("adapter", "unattached: ${currentItem.title}")
-//                }
-//            })
 
         }
     }
 
     override fun onViewAttachedToWindow(holder: VideoPlayerViewHolder) {
         super.onViewAttachedToWindow(holder)
-        holder.binding.videoPlayer.player?.play()
+        holder.binding.videoPlayer.player?.apply {
+            if(this.currentPosition != 0L) {
+                this.seekTo(0)
+            }
+        }
+        holder.binding.videoPlayer.player?.playWhenReady = true
         Log.v("adapter", "attached: w")
     }
 
     override fun onViewDetachedFromWindow(holder: VideoPlayerViewHolder) {
         super.onViewDetachedFromWindow(holder)
-        holder.binding.videoPlayer.player?.pause()
+        holder.binding.videoPlayer.player?.playWhenReady = false
         Log.v("adapter", "unattached: x")
     }
 
