@@ -3,17 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Kotlin/Bareq_course/MikMok_app/app/src/main/res/layout/activity_main.xml" value="0.1921875" />
-        <entry key="..\:/Kotlin/Bareq_course/MikMok_app/app/src/main/res/layout/item_video_player.xml" value="0.11475409836065574" />
-        <entry key="..\:/The Chance/Android/MikMok_app/app/src/main/res/drawable/background_button.xml" value="0.3625" />
-        <entry key="..\:/The Chance/Android/MikMok_app/app/src/main/res/drawable/background_person.xml" value="0.333" />
-        <entry key="..\:/The Chance/Android/MikMok_app/app/src/main/res/drawable/splash_screen_background.xml" value="0.3635" />
-        <entry key="..\:/The Chance/Android/MikMok_app/app/src/main/res/layout/activity_main.xml" value="0.3625" />
-        <entry key="..\:/The Chance/Android/MikMok_app/app/src/main/res/layout/item_video_player.xml" value="0.33" />
+        <entry key="..\:/MikMok/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/MikMok/app/src/main/res/layout/item_video_player.xml" value="0.18" />
         <entry key="..\:/Users/MSI/AndroidStudioProjects/MikMok_app/app/src/main/res/layout/activity_main.xml" value="0.2359375" />
-        <entry key="..\:/Users/Time TraveleR/AndroidStudioProjects/MikMok_app/app/src/main/res/drawable/shadow_background.xml" value="0.223" />
-        <entry key="..\:/Users/Time TraveleR/AndroidStudioProjects/MikMok_app/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Time TraveleR/AndroidStudioProjects/MikMok_app/app/src/main/res/layout/item_video_player.xml" value="0.33" />
       </map>
     </option>
   </component>
