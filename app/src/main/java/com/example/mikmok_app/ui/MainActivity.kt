@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setup() {
         val okHTTP = Client(dataManager)
-        okHTTP.getFilmsList{
+        okHTTP.getFilmsList {
             runOnUiThread {
                 val mAdapter = VideoPlayerAdapter(dataManager.filmsList)
                 binding.recyclerview.adapter = mAdapter

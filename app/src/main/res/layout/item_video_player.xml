@@ -10,26 +10,26 @@
         android:id="@+id/video_player"
         android:layout_width="match_parent"
         android:layout_height="@dimen/zero"
-        app:resize_mode="fill"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:resize_mode="fill" />
 
     <TextView
         android:id="@+id/text_title"
-        android:text="@string/ali_mohamed"
         style="@style/DefaultTextStyle"
         android:layout_width="@dimen/width_text_title"
         android:layout_height="wrap_content"
+        android:text="@string/ali_mohamed"
         app:layout_constraintStart_toEndOf="@+id/image_film"
         app:layout_constraintTop_toTopOf="@+id/image_film" />
 
     <TextView
         android:id="@+id/text_date"
-        android:text="@string/_23_00_pm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/_23_00_pm"
         android:textColor="@color/grey"
         android:textSize="@dimen/font_size_caption"
         app:layout_constraintBottom_toBottomOf="@+id/image_film"
@@ -70,7 +70,7 @@
         app:icon="@drawable/ic_flat_like"
         app:layout_constraintBottom_toTopOf="@+id/comment_video"
         app:layout_constraintEnd_toEndOf="parent"
-        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.rounded.button"/>
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.rounded.button" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/share_video"

@@ -13,7 +13,8 @@ import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
 
 
-class VideoPlayerAdapter(private val list: List<Film>) : RecyclerView.Adapter<VideoPlayerAdapter.VideoPlayerViewHolder>() {
+class VideoPlayerAdapter(private val list: List<Film>) :
+    RecyclerView.Adapter<VideoPlayerAdapter.VideoPlayerViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VideoPlayerViewHolder {
@@ -44,7 +45,7 @@ class VideoPlayerAdapter(private val list: List<Film>) : RecyclerView.Adapter<Vi
     override fun onViewAttachedToWindow(holder: VideoPlayerViewHolder) {
         super.onViewAttachedToWindow(holder)
         holder.binding.videoPlayer.player?.apply {
-            if(this.currentPosition != 0L) {
+            if (this.currentPosition != 0L) {
                 this.seekTo(0)
             }
         }
