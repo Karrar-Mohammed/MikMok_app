@@ -28,4 +28,36 @@
         <item name="cornerSize">50%</item>
     </style>
 
+    <style name="DefaultTextStyle" parent="@android:style/TextAppearance.Widget.TextView">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/font_size_secondary</item>
+        <item name="android:layout_marginStart">@dimen/spacing_medium</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:scrollHorizontally">true</item>
+    </style>
+
+    <style name="TextDescription" parent="@android:style/TextAppearance.Widget.TextView">
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:layout_gravity">start</item>
+        <item name="android:textSize">@dimen/font_size_caption</item>
+        <item name="android:layout_marginTop">@dimen/spacing_medium</item>
+        <item name="android:layout_marginEnd">@dimen/spacing_medium</item>
+        <item name="android:lines">2</item>
+
+    </style>
+
+    <style name="CircleButton" parent="">
+        <item name="android:gravity">center</item>
+        <item name="iconGravity">textStart</item>
+        <item name="android:insetTop">@dimen/zero</item>
+        <item name="android:insetBottom">@dimen/zero</item>
+        <item name="iconPadding">@dimen/zero</item>
+        <item name="backgroundTint">@color/white_200</item>
+        <item name="iconTint">@color/white</item>
+        <item name="elevation">@dimen/zero</item>
+    </style>
+
+
 </resources>

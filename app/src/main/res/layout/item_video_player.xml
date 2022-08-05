@@ -19,17 +19,9 @@
     <TextView
         android:id="@+id/text_title"
         android:text="@string/ali_mohamed"
-        android:layout_width="200dp"
+        style="@style/DefaultTextStyle"
+        android:layout_width="@dimen/width_text_title"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/spacing_medium"
-        android:paddingBottom="@dimen/spacing_small"
-        android:textColor="#ffffff"
-        android:scrollHorizontally="true"
-        android:ellipsize="end"
-        android:maxLines="1"
-        android:singleLine="true"
-        android:textSize="@dimen/font_size_secondary"
-        app:fontStyle="normal"
         app:layout_constraintStart_toEndOf="@+id/image_film"
         app:layout_constraintTop_toTopOf="@+id/image_film" />
 
@@ -45,19 +37,12 @@
         app:layout_constraintTop_toBottomOf="@+id/text_title"
         tools:ignore="MissingConstraints" />
 
-
     <TextView
         android:id="@+id/text_description"
+        style="@style/TextDescription"
         android:layout_width="@dimen/zero"
         android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:layout_marginTop="@dimen/spacing_medium"
-        android:layout_marginEnd="@dimen/spacing_medium"
-        android:lines="2"
-
         android:text="@string/text_description_is"
-        android:textColor="@color/grey"
-        android:textSize="@dimen/font_size_caption"
         app:layout_constraintEnd_toStartOf="@+id/share_video"
         app:layout_constraintStart_toStartOf="@+id/image_film"
         app:layout_constraintTop_toBottomOf="@+id/image_film"
@@ -77,33 +62,23 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/like_video"
+        style="@style/CircleButton"
         android:layout_width="@dimen/circle_size_button"
         android:layout_height="@dimen/circle_size_button"
         android:layout_marginEnd="@dimen/spacing_medium"
         android:layout_marginBottom="@dimen/spacing_medium"
-        android:insetTop="@dimen/zero"
-        android:insetBottom="@dimen/zero"
-        app:iconPadding="@dimen/zero"
-        app:backgroundTint="@color/white_200"
         app:icon="@drawable/ic_flat_like"
-        app:iconGravity="textTop"
-        app:iconTint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/comment_video"
         app:layout_constraintEnd_toEndOf="parent"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.rounded.button"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/share_video"
+        style="@style/CircleButton"
         android:layout_width="@dimen/circle_size_button"
         android:layout_height="@dimen/circle_size_button"
         android:layout_marginBottom="@dimen/spacing_extra_large"
-        android:insetTop="@dimen/zero"
-        android:insetBottom="@dimen/zero"
-        app:backgroundTint="@color/white_200"
         app:icon="@drawable/ic_solid_share"
-        app:iconGravity="textTop"
-        app:iconPadding="@dimen/zero"
-        app:iconTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/comment_video"
         app:layout_constraintStart_toStartOf="@+id/comment_video"
@@ -112,18 +87,11 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/comment_video"
+        style="@style/CircleButton"
         android:layout_width="@dimen/circle_size_button"
         android:layout_height="@dimen/circle_size_button"
         android:layout_marginBottom="@dimen/spacing_medium"
-        android:gravity="center"
-        android:insetTop="@dimen/zero"
-        android:insetBottom="@dimen/zero"
-        app:iconPadding="@dimen/zero"
-        app:iconGravity="textStart"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/white_200"
         app:icon="@drawable/ic_solid_comment"
-        app:iconTint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/share_video"
         app:layout_constraintEnd_toEndOf="@+id/like_video"
         app:layout_constraintStart_toStartOf="@+id/like_video"
